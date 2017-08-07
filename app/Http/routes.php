@@ -15,3 +15,7 @@ Route::get('/', [
   "uses" => "HomeController@index",
   "as"   => "home"
 ]);
+
+Route::get('/profile', function(){
+  return redirect()->route('home')->with('info', 'you made it to the profile page');
+});
