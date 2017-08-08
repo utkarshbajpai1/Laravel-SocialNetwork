@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 
 use Illuminate\Http\Request;
 
@@ -19,7 +20,15 @@ class AuthController extends Controller
         'password' => 'required|min:6'
       ]);
 
-      dd('mad');
+      $users = new User;
+
+      $users->email    = $request->email;
+      $users->username = $request->username;
+      $users->password = bcrypt($request->password);
+
+      return redirect()->route('home')->with('info', 'U have created your account and you can now sign in');
+
+
 
     }
 }
