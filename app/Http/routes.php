@@ -11,11 +11,20 @@
 |
 */
 
+// home controller
 Route::get('/', [
   "uses" => "HomeController@index",
   "as"   => "home"
 ]);
 
-Route::get('/profile', function(){
-  return redirect()->route('home')->with('info', 'you made it to the profile page');
-});
+//authentication controller
+
+Route::get('/signup', [
+  'uses' => 'AuthController@getSignup',
+  'as'   => 'auth.signup'
+]);
+
+Route::post('/signup', [
+  'uses' => 'AuthController@postSignup',
+  'as'   => 'auth.signup'
+]);
