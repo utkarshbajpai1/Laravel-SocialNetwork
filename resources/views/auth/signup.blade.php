@@ -13,11 +13,11 @@
                     <span class="help-block">{{ $errors->first('email') }}</span>
                   @endif
               </div>
-              <div class="form-group{{ $errors->has('user')?' has-error':'' }}">
-                  <label for="user" class="control-label">Choose a user</label>
-                  <input type="text" name="user" class="form-control" id="user" value="{{ Request::old('user') ?:'' }}">
-                  @if ($errors->has('user'))
-                    <span class="help-block">{{ $errors->first('user') }}</span>
+              <div class="form-group{{ $errors->has('username')?' has-error':'' }}">
+                  <label for="username" class="control-label">Choose a user</label>
+                  <input type="text" name="username" class="form-control" id="username" value="{{ Request::old('username') ?:'' }}">
+                  @if ($errors->has('username'))
+                    <span class="help-block">{{ $errors->first('username') }}</span>
                   @endif
               </div>
               <div class="form-group{{ $errors->has('password')?' has-error':'' }}">
