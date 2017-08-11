@@ -28,7 +28,11 @@ class AuthController extends Controller
 
       return redirect()->route('home')->with('info', 'U have created your account and you can now sign in');
 
-
-
     }
+
+
+    public function getSignin(){
+      return view('auth.signin');
+    }
+
 }
