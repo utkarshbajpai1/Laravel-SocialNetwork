@@ -35,4 +35,8 @@ class AuthController extends Controller
       return view('auth.signin');
     }
 
+    public function postSignin(){
+      
+    }
+
 }
