@@ -35,8 +35,12 @@ class AuthController extends Controller
       return view('auth.signin');
     }
 
-    public function postSignin(){
-      
+    public function postSignin(Request $request){
+        $this->validate($request, [
+            'email'     => 'required',
+            'password'  => 'required'
+        ]);
+        dd('all ok');
     }
 
 }
